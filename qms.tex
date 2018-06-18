@@ -8,12 +8,13 @@
 \usepackage{amsthm}
 \usepackage{bm}
 \usepackage{bbm}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[all,cmtip]{xy}
 \input{diagxy}
 \CompileMatrices       
 \usepackage{url}
 %\usepackage{pdfpages}
-
+\input{macros}
 
 % categories
 \newcommand{\bbtwo}{\ensuremath{\mathbbm{2}}}
@@ -131,6 +132,10 @@ Cofibrations, partial map classification, the functor $X^+$, the awfs of +-algeb
 %%%%%
 \section{Partial path lifting (biased version)}
 
+\jcomment{If I understand correctly, GS construct an \emph{algebraic} weak 
+factorization system. Of course every awfs generates a wfs, but the generators 
+below correspond to the awfs rather than the wfs? (+naturality constraints.)}
+
 We  first recall the specification of the trivial-cofibration/fibration WFS from \cite{GS}, and show that the resulting fibrations are equivalent to those specified in the ``logical style''  given in \cite{CCHM,OP}. 
 
 The generating trivial cobrations are all maps of the form
@@ -213,10 +218,22 @@ The specification of the type $L^0(P)$ of \eqref{eqn:pplift} can also be represe
 %\end{equation}
 \begin{equation}\label{diagram:ppl}
 \xymatrix{
-& P0 \ar[rr] \ar[dd] |\hole  & & P \ar[dd] \\
-[\phi] \ar[ru] ^{s0} \ar[rr] \ar@{ >->}[dd] & & [\phi]\!\times\!\I \ar[ru]^s \ar@{ >->}[dd] & \\
-& 1 \ar[rr]_<<<<<<<<<{\delta_0} |>>>>>>>>>>>>>>>\hole & & \I \\
-1 \ar[ru] \ar[rr] \ar[ruuu]|>>>>>>>>>>>>>\hole _{a_0} & & 1\!\times\!\I \ar@{.>}[ruuu] _a \ar[ru]_{\pi_2} & }
+	&	P0 					\ar[rr] 
+							\ar[dd] |\hole  
+	&& 	P 					\ar[dd] 
+	\\	[\phi] 				\ar[ru] ^{s0} 
+							\ar[rr] 
+							\ar@{ >->}[dd] 
+	& & [\phi]\!\times\!\I 	\ar[ru]^s 
+							\ar@{ >->}[dd] & \\
+	& 	1 					\ar[rr]_<<<<<<<<<{\delta_0} |>>>>>>>>>>>>>>>\hole 
+	& & \I 
+	\\	1 					\ar[ru] 
+							\ar[rr] 	
+							\ar[ruuu]|>>>>>>>>>>>>>\hole _{a_0} 
+	& & 1\!\times\!\I 		\ar@{.>}[ruuu] _a 
+							\ar[ru]_{\pi_2} & 
+}
 \end{equation}
 Here the left-hand vertical square is determined as a pullback of the right-hand one along the endpoint $\delta_0 : 1 \to \I$.
 
